@@ -3,12 +3,16 @@
 <head>
 <meta charset="utf-8">
 <title>Login</title>
-
+<script>
+    $(document).ready (function () {  
+  $("#loginForm").validate ();  
+});  
+</script>
 </head>
 <body>
     <h2>Login</h2>
     
-<form class="cmxform" id="signupForm" method="get" action="form-handler.html" autocomplete="off">
+<form class="cmxform" id="loginForm" method="get" action="login.html" autocomplete="off">
 
     <p>
         <label for="username">Username:</label>
