@@ -2,37 +2,61 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Login</title>
+<title>Register</title>
+<link rel = "stylesheet" type = "text/css" href = "Content/app.css">
+<script src = "Scripts/app.js"></script>
 
 </head>
 <body>
     
     <h1>Register</h1>
     <h2>Create your own account. It's free and only takes a minute.</h2>
-<form class="cmxform" id="loginForm" method="get" action="login.html" autocomplete="off">
 
-    <p>
+<form  id="registerForm" method="POST" novalidate autocomplete="off">
+
+    <div id="ErrorMessage" class="alert alert-danger">
+        Error Message.
+    </div>
+
+    <div class="form-group">
         <label for="firstName">First Name:</label>
-        <input id="firstName" name="firstName" type="text"></input>
-    </p>
-    <p>
+        <input id="firstName" name="firstName" type="text" placeholder="First Name" value="" required></input>
+    </div>
+
+    
+
+    <div class="form-group">
         <label for="lastName">Last Name:</label>
-        <input id="lastName" name="lastName" type="text"></input>
-    </p>
-    <p>
+        <input id="lastName" name="lastName" type="text" placeholder="Last Name" value="" required></input>
+    </div>
+
+    <div class="form-group">
         <label for="email">Email:</label>
-        <input id="email" name="email" type="email"></input>
-    </p>
-    <p>
+        <input id="email" name="email" type="email" placeholder="Email Address" value="" required></input>
+    </div>
+
+    <div class="form-group">
         <label for="password">Password:</label>
-        <input id="password" name="password" type="password"></input>
-    </p>
+        <input id="password" name="password" type="password" placeholder="Password" value="" required></input>
+    </div>
+
+    <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input id="confirmPassword" name="conf_password" type="password" placeholder="Confirm Password" value="" required></input>
+    </div>
+
+    <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+    
     <p>
-        <label for="conf_password">Confirm Password:</label>
-        <input id="conf_password" name="conf_password" type="password"></input>
+        Already have an account?
+        <a href="login.html">Sign in</a>
     </p>
-    <p>
-        <input id="submit" name="submit" type="submit" value="Register"></input>
-    </p>
+    
+    
+    <script>
+        //hide error message
+        $("#ErrorMessage").hide();
+        DisplayRegisterContent();
+    </script>
 </body>
 </html>
