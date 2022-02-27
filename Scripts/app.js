@@ -14,48 +14,65 @@ class User {
     }
 }
 
-function DisplayRegisterContent()
-{
-    document.title = "WEBD 6201 - Register";
+"use strict";
+
+function validateName() {
+    let firstName = document.forms["registerForm"]["firstName"].value;
+    let lastName = document.forms["registerForm"]["lastName"].value;
 
 
-    //function to validate inputs
-    function validateInput(selector, condition, errorMessage) {
-        if (condition) {
-            $("#ErrorMessage").show();
-            $("#ErrorMessage").text(errorMessage);
-            $(selector).select();
-            $(selector).css("border", "2px solid red");
-        }
-        else {
-            $("#ErrorMessage").hide();
-            $(selector).css("border", "1px solid #ced4da");
-        }
+    if (firstName == "")
+    {
+        alert("First name cannot be empty.");
+        // alert("First name cannot be empty.");
     }
-
-    $("#firstName").blur((e) => {
-        validateInput("#FirstName", ($("#FirstName").val().length < 2), "First Name is too short");
-    });
-
-    $("#lastName").blur((e) => {
-        validateInput("#lastName", ($("#lastName").val().length < 2), "Last Name is too short");
-    });
-
-    //user presses submit button
-    $("#registerForm").submit((e) => {
-        //stop default events
-        e.preventDefault();
-        e.stopPropagation();
-
-        //get values from form
-        var firstName = $('firstName').val();
-        var lastName = $('lastName').val();
-        var email = $('email').val();
-        var password = $('password').val();
-        var confirmPassword = $('confirmPassword').val();
-
-        //create user
-        var userObject = new User(firstName, lastName, email, password)
-    });
+    else if (firstName.length < 2) 
+    {
+        alert("First name has to be longer than 2 letters.");
+    }
+    else if (lastName == "")
+    {
+        alert("Last name cannot be empty.");
+    }
+    else if (lastName.length < 2) 
+    {
+        alert("Last name must be longer than 2 letters.");
+    }
+    return false;
 }
 
+function validateEmail()
+{
+    let email = document.forms["registerForm"]["email"].value;
+
+    if (email == "")
+    {
+        alert("Email cannot be empty.");
+    }
+    else if (email.length < 8)
+    {
+        alert("Email is too short. Must be longer than 8 characters.");
+    }
+    return false;
+}
+
+function validatePasswords()
+{
+    let password = document.forms["registerForm"]["password"].value;
+    let confirmPassword = document.forms["registerForm"]["confirmPassword"].value;
+
+    if (password == "")
+    {
+        // document.getElementById("ErrorMessage").innerHTML = "Password cannot be empty."
+        alert("Password cannot be empty.");
+    }
+    else if (password.length < 6)
+    {
+        alert("Password must be longer than 6 characters.")
+    }
+    else if (password != confirmPassword)
+    {
+        alert("Passwords do not match.")
+    }
+    return false;
+}
