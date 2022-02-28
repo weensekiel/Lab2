@@ -137,7 +137,11 @@ p           { margin: 0; }
 .topnav {
   background-color: #333;
   overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
+
 
 .topnav a {
   float: right;
@@ -160,7 +164,8 @@ p           { margin: 0; }
 
 .nav-item
 {
-    display: inline;
+    /*display: inline;*/
+    list-style-type: none;
 }
 
 .left-nav-item
@@ -200,4 +205,11 @@ h1
 
 .hide{
     display: none;
+}
+
+.navbar-nav
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
 }

@@ -142,7 +142,7 @@ function loginClick()
 
     if(password.length <= 0)
     {
-        error += "Error: password required";
+        error += " Error: password required";
     }
 
     if (error == "")
@@ -151,6 +151,7 @@ function loginClick()
         newLi.classList.add("nav-item");
         newLi.innerHTML = username;
     
+        console.log(document.querySelector("#myList").children);
         document.getElementById("myList").insertBefore(newLi, document.getElementsByClassName("nav-item")[1]);
 
     }
@@ -251,13 +252,6 @@ function clearForm() {
 
 }
 
-function usernameNavBar(globalUsername)
-{
-    if (globalUsername != null)
-    {
-        loginClick();
-    }
-}
 
 let btnLogin = document.querySelector("#login");
 btnLogin.addEventListener("click", loginClick);
