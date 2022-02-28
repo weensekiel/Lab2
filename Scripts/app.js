@@ -238,3 +238,7 @@ function validatePasswords()
     return false;
 }
 
+function clearForm() {
+    $("#registerForm")[0].reset();
+    $("#ErrorMessage").hide();
+}
