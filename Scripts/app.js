@@ -220,7 +220,7 @@ function validateEmail()
 function validatePasswords()
 {
     let password = document.forms["registerForm"]["password"].value;
-    let confirmPassword = document.forms["registerForm"]["confirmPassword"].value;
+    let conf_password = document.forms["registerForm"]["conf_password"].value;
 
     if (password == "")
     {
@@ -231,7 +231,7 @@ function validatePasswords()
     {
         document.getElementById("ErrorMessage").innerHTML += "<h2>Password must be longer than 6 characters.</h2>";
     }
-    else if (password != confirmPassword)
+    else if (password != conf_password)
     {
         document.getElementById("ErrorMessage").innerHTML += "<h2>Passwords do not match.</h2>";
     }
@@ -239,6 +239,12 @@ function validatePasswords()
 }
 
 function clearForm() {
-    $("#registerForm")[0].reset();
-    $("#ErrorMessage").hide();
+    document.getElementById("firstName").value = "";
+    document.getElementById("lastName").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("conf_password").value = "";
+
+
+
 }
