@@ -158,7 +158,7 @@ function validateName() {
     if (firstName == "")
     {
         // alert("First name cannot be empty.");
-        document.getElementById("ErrorMessage").innerHTML += "<h2>First name cannot be empty.</h2>";
+        document.getElementById("ErrorMessage").innerHTML = "<h2>First name cannot be empty.</h2>";
     }
     else if (firstName.length < 2) 
     {
@@ -172,6 +172,10 @@ function validateName() {
     else if (lastName.length < 2) 
     {
         document.getElementById("ErrorMessage").innerHTML += "<h2>Last name must be longer than 2 letters.</h2>";
+    }
+    else
+    {
+        document.getElementById("ErrorMessage").innerHTML += "";
     }
     return false;
 }
@@ -187,6 +191,10 @@ function validateEmail()
     else if (email.length < 8)
     {
         document.getElementById("ErrorMessage").innerHTML += "<h2>Email is too short. Must be longer than 8 characters.</h2>";
+    }
+    else
+    {
+        document.getElementById("ErrorMessage").innerHTML += "";
     }
     return false;
 }
@@ -209,16 +217,20 @@ function validatePasswords()
     {
         document.getElementById("ErrorMessage").innerHTML += "<h2>Passwords do not match.</h2>";
     }
+    else
+    {
+        document.getElementById("ErrorMessage").innerHTML += "";
+    }
     return false;
 }
 
 function clearForm() {
     document.getElementById("firstName").value = "";
     document.getElementById("lastName").value = "";
+    document.getElementById("username").value = "";
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
     document.getElementById("conf_password").value = "";
-
 
 
 }
