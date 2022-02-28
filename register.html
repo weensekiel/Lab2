@@ -8,6 +8,7 @@
 
 </head>
 <body>
+<<<<<<< HEAD
 
     <div class="topnav">
         <ul class="navbar-nav ml-auto" id="myList">
@@ -21,54 +22,57 @@
         </ul>
       </div>
     
+=======
+    <center>
+>>>>>>> 69e2244c75b5f46da280e19208ec2f5b5dda49a1
     <h1>Register</h1>
     <h2>Create your own account. It's free and only takes a minute.</h2>
 
-<form  id="registerForm" method="POST" novalidate autocomplete="off">
+<form  id="registerForm" method="POST" action="" autocomplete="off" onsubmit="return validateName(), validateEmail(), validatePasswords()" novalidate>
 
-    <div id="ErrorMessage" class="alert alert-danger">
+    <!-- error message -->
+    <div id="ErrorMessage" class="hide">
         Error Message.
     </div>
 
     <div class="form-group">
         <label for="firstName">First Name:</label>
-        <input id="firstName" name="firstName" type="text" placeholder="First Name" value="" required></input>
+        <input id="firstName" name="firstName" type="text" placeholder="First Name" minlength="2" required></input>
     </div>
-
-    
 
     <div class="form-group">
         <label for="lastName">Last Name:</label>
-        <input id="lastName" name="lastName" type="text" placeholder="Last Name" value="" required></input>
+        <input id="lastName" name="lastName" type="text" placeholder="Last Name" minlength="2" required></input>
     </div>
 
     <div class="form-group">
         <label for="email">Email:</label>
-        <input id="email" name="email" type="email" placeholder="Email Address" value="" required></input>
+        <input id="email" name="email" type="email" placeholder="Email Address" required></input>
     </div>
 
     <div class="form-group">
         <label for="password">Password:</label>
-        <input id="password" name="password" type="password" placeholder="Password" value="" required></input>
+        <input id="password" name="password" type="password" placeholder="Password" required></input>
     </div>
 
     <div class="form-group">
         <label for="confirmPassword">Confirm Password:</label>
-        <input id="confirmPassword" name="conf_password" type="password" placeholder="Confirm Password" value="" required></input>
+        <input id="confirmPassword" name="conf_password" type="password" placeholder="Confirm Password"required></input>
     </div>
 
-    <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
-    
-    <p>
+    <div>
+    <input class="submit" type="submit" value="Submit">    
+    </div>
+
+     <p>
         Already have an account?
         <a href="login.html">Sign in</a>
     </p>
-    
-    
+    </center>
     <script>
-        //hide error message
-        $("#ErrorMessage").hide();
-        DisplayRegisterContent();
-    </script>
+        document.getElementById("registerForm").addEventListener("click", function(event){
+          event.stopPropagation()
+        });
+        </script>
 </body>
 </html>
