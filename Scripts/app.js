@@ -14,33 +14,6 @@ class User {
     }
 }
 
-"use strict";
-
-function validateName() {
-    let firstName = document.forms["registerForm"]["firstName"].value;
-    let lastName = document.forms["registerForm"]["lastName"].value;
-
-
-    if (firstName == "")
-    {
-        alert("First name cannot be empty.");
-        // alert("First name cannot be empty.");
-    }
-    else if (firstName.length < 2) 
-    {
-        alert("First name has to be longer than 2 letters.");
-    }
-    else if (lastName == "")
-    {
-        alert("Last name cannot be empty.");
-    }
-    else if (lastName.length < 2) 
-    {
-        alert("Last name must be longer than 2 letters.");
-    }
-    return false;
-}
-
 /* sends user information to the console */
 function sendToConsole()
 {
@@ -160,7 +133,7 @@ function loginClick()
     const query = window.location.search;
     let searchParams = new URLSearchParams(query);
 
-    // Assign values to variables
+    // // Assign values to variables
     let username = searchParams.get('username');
     let password = searchParams.get('password');
 
@@ -172,6 +145,7 @@ function loginClick()
     console.log(password);
 
     document.getElementById("myList").insertBefore(newLi, document.getElementsByClassName("nav-item")[2]);
+
 }
 
 
