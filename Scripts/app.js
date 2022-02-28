@@ -192,6 +192,10 @@ function validateEmail()
     {
         document.getElementById("ErrorMessage").innerHTML += "<h2>Email is too short. Must be longer than 8 characters.</h2>";
     }
+    else if (!email.includes("@"))
+    {
+        document.getElementById("ErrorMessage").innerHTML += "<h2>Email is not valid.</h2>";
+    }
     else
     {
         document.getElementById("ErrorMessage").innerHTML += "";
