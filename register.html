@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Register</title>
 <link rel = "stylesheet" type = "text/css" href = "content/app.css">
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 <script src = "scripts/app.js"></script>
 
 </head>
@@ -15,8 +16,7 @@
 <form  id="registerForm" method="POST" action="" autocomplete="off" onsubmit="return validateName(), validateEmail(), validatePasswords()" novalidate>
 
     <!-- error message -->
-    <div id="ErrorMessage" class="hide">
-        Error Message.
+    <div id="ErrorMessage">
     </div>
 
     <div class="form-group">
@@ -54,9 +54,26 @@
     </p>
     </center>
     <script>
+        //stop default form behaviour
         document.getElementById("registerForm").addEventListener("click", function(event){
           event.stopPropagation()
         });
+
+        //create new instance of User when register button is clicked
+        $('#registerForm').submit((e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var firstName = $("#firstName").val();
+            var lastName = $("#lastName").val();
+            var username = $("#username").val();
+            var email = $("#email").val();
+            var password = $("#password").val();
+
+            //log to console
+            let userObject = new User(firstName, lastName, username, email, password);
+            console.log(userObject);
+        })
         </script>
 </body>
 </html>
