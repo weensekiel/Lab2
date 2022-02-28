@@ -129,23 +129,35 @@ function createProject3()
 
 function loginClick()
 {
-    // Get username and password from URL
-    const query = window.location.search;
-    let searchParams = new URLSearchParams(query);
+    let username = $("#username")[0].value;
 
-    // // Assign values to variables
-    let username = searchParams.get('username');
-    let password = searchParams.get('password');
+    let password = $("#password")[0].value;
 
-    var newLi = document.createElement("li");
-    newLi.classList.add("nav-item");
-    newLi.innerHTML = "username";
+    let error = "";
 
-    console.log(username);
-    console.log(password);
+    if(username.length <= 0)
+    {
+        error += "Error: username required";
+    }
 
-    document.getElementById("myList").insertBefore(newLi, document.getElementsByClassName("nav-item")[2]);
+    if(password.length <= 0)
+    {
+        error += "Error: password required";
+    }
 
+    if (error == "")
+    {
+        var newLi = document.createElement("li");
+        newLi.classList.add("nav-item");
+        newLi.innerHTML = username;
+    
+        document.getElementById("myList").insertBefore(newLi, document.getElementsByClassName("nav-item")[1]);
+
+    }
+    else
+    {
+        $("#errors").text(error);
+    }
 }
 
 
@@ -238,3 +250,14 @@ function clearForm() {
 
 
 }
+
+function usernameNavBar(globalUsername)
+{
+    if (globalUsername != null)
+    {
+        loginClick();
+    }
+}
+
+let btnLogin = document.querySelector("#login");
+btnLogin.addEventListener("click", loginClick);
