@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Lab 1 - Products Page</title>
+      <link rel = "stylesheet" type = "text/css" href = "Content/app.css">
+      <script src = "Scripts/app.js"></script>
+      
+   </head>
+
+   <body>
+        <div class="topnav">
+         <ul class="navbar-nav ml-auto" id="myList">
+            <li class="left-nav-item">WEBD6201 - Lesson 1</li>
+            <li class="nav-item"> <a class="nav-link" href="login.html">Login/Logout</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="contactForm.html">Contact Us</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="aboutUs.html"> About Us</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="services.html">Services</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="projects.html" id="projects">Products</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
+         </ul>
+       </div>
+       <script>
+          document.getElementById("projects").innerHTML = "Projects";
+          document.writeln("<h1>Our favourite projects</h1>");
+          document.writeln(createHR());
+          document.writeln(createProject1() + "<br/><br/>");
+          document.writeln(createProject2() + "<br/><br/>");
+          document.writeln(createProject3());
+          
+       </script>
+       
+
+       
+   </body>
+</html>
