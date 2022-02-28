@@ -14,19 +14,11 @@ class User {
     }
 }
 
-<<<<<<< HEAD
-
-
-function DisplayRegisterContent()
-{
-    document.title = "WEBD 6201 - Register";
-=======
 "use strict";
 
 function validateName() {
     let firstName = document.forms["registerForm"]["firstName"].value;
     let lastName = document.forms["registerForm"]["lastName"].value;
->>>>>>> 69e2244c75b5f46da280e19208ec2f5b5dda49a1
 
 
     if (firstName == "")
@@ -49,7 +41,6 @@ function validateName() {
     return false;
 }
 
-<<<<<<< HEAD
 /* sends user information to the console */
 function sendToConsole()
 {
@@ -181,7 +172,7 @@ function loginClick()
     console.log(password);
 
     document.getElementById("myList").insertBefore(newLi, document.getElementsByClassName("nav-item")[2]);
-=======
+}
 function validateEmail()
 {
     let email = document.forms["registerForm"]["email"].value;
@@ -216,5 +207,4 @@ function validatePasswords()
         alert("Passwords do not match.")
     }
     return false;
->>>>>>> 69e2244c75b5f46da280e19208ec2f5b5dda49a1
 }
