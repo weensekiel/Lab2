@@ -3,7 +3,7 @@
  * IDs:                     100577786
  * Date Completed: 2022-02-25
  -->
- 
+
 <!doctype html>
 <html>
 <head>
@@ -79,7 +79,8 @@
     <script>
         //stop default form behaviour
         document.getElementById("registerForm").addEventListener("click", function(event){
-          event.stopPropagation()
+          event.preventDefault();  
+          event.stopPropagation();
         });
 
         //create new instance of User when register button is clicked
